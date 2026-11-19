@@ -6,7 +6,9 @@ import ToneSelector from './ToneSelector'
 export default function ChatWindow({ messages, input, setInput, onSend, loading, tone, setTone, onRegenerate, activeTitle }) {
   const bottomRef = useRef(null)
   const textareaRef = useRef(null)
-  useEffect(() => bottomRef.current?.scrollIntoView({ behavior: 'smooth' }), [messages])
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages])
   function submit(e) {
     e?.preventDefault()
     onSend()
